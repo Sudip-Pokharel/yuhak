@@ -87,6 +87,11 @@ body {
     @media (max-width: 680px) {
       .title--big {
         font-size: 3.2rem; } }
+  .title--small {
+    font-size: 2.2rem; }
+    @media (max-width: 680px) {
+      .title--small {
+        font-size: 2rem; } }
 
 .paragraph-main {
   font-size: 2rem;
@@ -191,7 +196,17 @@ body {
     align-items: center;
     -webkit-box-pack: end;
     -ms-flex-pack: end;
-    justify-content: flex-end; }
+    justify-content: flex-end;
+    -webkit-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
+    transition: .2s ease-in-out; }
+    @media (max-width: 600px) {
+      .header__top ul {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center; } }
     .header__top ul li {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -229,22 +244,22 @@ body {
         transition: .2s ease-in-out; }
         .header__top ul li a svg {
           margin-right: .8rem; }
-          .header__top ul li a svg path {
+          .header__top ul li a svg path:last-child {
             fill: #fff;
             -webkit-transition: .2s ease-in-out;
             -o-transition: .2s ease-in-out;
             transition: .2s ease-in-out; }
-          @media (max-width: 380px) {
-            .header__top ul li a svg {
-              display: none; } }
         .header__top ul li a:hover {
           color: #666; }
-          .header__top ul li a:hover svg path {
+          .header__top ul li a:hover svg path:last-child {
             fill: #666; }
+        @media (max-width: 600px) {
+          .header__top ul li a span {
+            display: none; } }
 
 .header__main {
-  padding-top: .2rem;
-  padding-bottom: .2rem; }
+  padding-top: 1rem;
+  padding-bottom: 1rem; }
   .header__main .container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -255,8 +270,15 @@ body {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between; }
+    @media (max-width: 319px) {
+      .header__main .container {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap; } }
   .header__main__logo {
-    width: 30rem; }
+    width: 22rem; }
+    @media (max-width: 319px) {
+      .header__main__logo {
+        width: 18rem; } }
   .header__main .navigation {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -275,7 +297,8 @@ body {
       margin-right: 0;
       height: 2.4rem;
       width: 3.8rem;
-      cursor: pointer; }
+      cursor: pointer;
+      z-index: 99; }
       .header__main .navigation__item.menu-trigger #menu-trigger-icon span {
         position: absolute;
         left: 0;
@@ -329,16 +352,20 @@ body {
 
 .header #mobile-menu {
   position: absolute;
-  top: 13.2rem;
+  top: 12.1rem;
   right: 0;
   width: 0;
-  height: calc(100vh - 13.2rem);
+  height: calc(100vh - 12.1rem);
   background-color: white;
   z-index: 999;
   display: none;
   -webkit-transition: .3s ease-out;
   -o-transition: .3s ease-out;
   transition: .3s ease-out; }
+  @media (max-width: 600px) {
+    .header #mobile-menu {
+      top: 11.2rem;
+      height: calc(100vh - 11.2rem); } }
   .header #mobile-menu ul {
     width: 100%;
     padding: 2rem 1.2rem;
@@ -441,6 +468,9 @@ body {
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%); }
+    @media (max-width: 300px) {
+      .main .hero .slider-content {
+        display: none; } }
     .main .hero .slider-content .title.title--main {
       max-width: 70rem;
       margin-bottom: 2rem; }
@@ -464,16 +494,50 @@ body {
   .main .why-us .container .content,
   .main .offer .container .content {
     max-width: 46%; }
+    .main .why-us .container .content.content-item-1,
+    .main .offer .container .content.content-item-1 {
+      margin-right: 4%; }
+    .main .why-us .container .content.content-item-2,
+    .main .offer .container .content.content-item-2 {
+      margin-left: 4%; }
+    .main .why-us .container .content ul,
+    .main .offer .container .content ul {
+      list-style-type: disc;
+      padding-left: 2rem;
+      line-height: 32px;
+      font-size: 1.6rem;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+      .main .why-us .container .content ul li,
+      .main .offer .container .content ul li {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%; }
+        .main .why-us .container .content ul li:not(:last-child),
+        .main .offer .container .content ul li:not(:last-child) {
+          padding-right: 2rem; }
+        @media (max-width: 579px) {
+          .main .why-us .container .content ul li,
+          .main .offer .container .content ul li {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 100%;
+            flex: 0 0 100%; }
+            .main .why-us .container .content ul li:not(:last-child),
+            .main .offer .container .content ul li:not(:last-child) {
+              padding-right: .5rem; } }
     .main .why-us .container .content .title.title--big,
     .main .offer .container .content .title.title--big {
       width: -webkit-fit-content;
       width: -moz-fit-content;
       width: fit-content;
       margin-bottom: 4rem; }
-    .main .why-us .container .content p.paragraph,
-    .main .offer .container .content p.paragraph {
-      font-size: 1.6rem;
-      color: #666; }
+    .main .why-us .container .content .title.title--small,
+    .main .offer .container .content .title.title--small {
+      margin-top: 2.2rem;
+      margin-bottom: 1rem; }
   @media (max-width: 991px) {
     .main .why-us .container,
     .main .offer .container {
@@ -552,6 +616,9 @@ body {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between; }
+  @media (max-width: 319px) {
+    .footer .footer-logo {
+      width: 18rem; } }
   @media (max-width: 680px) {
     .footer {
       padding: 2rem 0;
@@ -596,7 +663,7 @@ body {
         -webkit-transition: .2s ease-in-out;
         -o-transition: .2s ease-in-out;
         transition: .2s ease-in-out; }
-      .footer ul .contact-info a:hover svg path {
+      .footer ul .contact-info a:hover svg path:last-child {
         fill: #FF8D27; }
     @media (max-width: 767px) {
       .footer ul {
